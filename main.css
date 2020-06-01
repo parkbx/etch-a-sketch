@@ -1,0 +1,32 @@
+.div-main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.div-button-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.div-grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    grid-template-rows: repeat(16, auto);
+    height: 600px;
+    width: 600px;
+    margin: auto;
+}
+
+.div-grid {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #808080;
+    background-color: #ffffff;
+}
+
+.div-grid-hovered {
+    background-color: #808080;
+}
