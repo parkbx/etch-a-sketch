@@ -103,13 +103,28 @@ function clearGrid() {
     });
 }
 
-// Toggle Rnadom mode
+function removeButtonSelection() {
+    // Create function to remove .button-selected CSS from each button
+}
+
+// Declare buttons
 let btnRandom = document.querySelector('.btn-ranColor');
+let btnShade = document.querySelector('.btn-shading');
+let btnDefault = document.querySelector('.btn-default');
+
+// Toggle Rnadom mode
 btnRandom.addEventListener('click', () => {
-    if (isRandom) {
+    if (isRandom) { // If random button is TRUE/turned-on then set it to FALSE/turn-off.
+        btnRandom.classList.remove('button-selected');
+        btnDefault.classList.add('button-selected');
+        
         isRandom = false;
         isDefault = true;
     } else {
+        btnRandom.classList.add('button-selected');
+        btnShade.classList.remove('button-selected');
+        btnDefault.classList.remove('button-selected');
+        
         isRandom = true;
         isShade = false;
         isDefault = false;
@@ -118,14 +133,18 @@ btnRandom.addEventListener('click', () => {
 
 
 // Toggle Shading mode
-let btnShade = document.querySelector('.btn-shading');
 btnShade.addEventListener('click', () => {
-    if (isShade) {
+    if (isShade) { // If shading button is TRUE/turned-on then set it to FALSE/turn-off.
         btnShade.classList.remove('button-selected');
+        btnDefault.classList.add('button-selected');
+        
         isShade = false;
         isDefault = true;
     } else {
         btnShade.classList.add('button-selected');
+        btnRandom.classList.remove('button-selected');
+        btnDefault.classList.remove('button-selected');
+
         isShade = true;
         isRandom = false;
         isDefault = false;
@@ -133,7 +152,6 @@ btnShade.addEventListener('click', () => {
 });
 
 // Toggle Default mode
-let btnDefault = document.querySelector('.btn-default');
 btnDefault.addEventListener('click', () => {
     isShade = false;
     isRandom = false;
